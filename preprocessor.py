@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import numpy as np
 
-def load_data():
+def load_and_sample_data():
     """
     Import data from the dataset
     :return: Dictionary samples
