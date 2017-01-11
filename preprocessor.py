@@ -29,4 +29,4 @@ def make_graph(data):
         [(row['company_name'], row['investor_name'], 1) for idx, row in data.iterrows()],
         weight='weight'
     )
-
+    return company_investor_graph
