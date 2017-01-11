@@ -9,3 +9,6 @@ def load_data():
 
     :return:
     """
+    data = pd.read_csv('./dataset/Link.csv')
+    df_percent = data.sample(frac=0.001)
+    return df_percent
