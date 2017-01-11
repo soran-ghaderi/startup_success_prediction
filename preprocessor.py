@@ -14,3 +14,9 @@ def load_and_sample_data():
     df_percent = data.sample(frac=0.001)
     return df_percent
 
+def make_graph(data):
+    """
+
+    :param data:
+    :return:
+    """
