@@ -20,7 +20,7 @@ def make_graph(data):
     :param data:
     :return:
     """
-    print('making graph...')
+    print('Building the graph...')
     B = nx.Graph()
     B.add_nodes_from(data['company_name'], bipartite=0)
     B.add_nodes_from(data['investor_name'], bipartite=1)
