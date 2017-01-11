@@ -14,7 +14,7 @@ def load_and_sample_data():
     df_percent = data.sample(frac=0.001)
     return df_percent
 
-def make_graph(data):
+def make_graph(data: dict) -> dict:
     """
     Constructing a bipartite graph for calcW_and_write() method
     to calculate the common investors startups have
