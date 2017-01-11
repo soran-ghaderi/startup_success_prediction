@@ -13,3 +13,4 @@ def load_and_sample_data():
     data = pd.read_csv('./dataset/Link.csv')
     df_percent = data.sample(frac=0.001)
     return df_percent
+
