@@ -30,3 +30,10 @@ def make_graph(data: dict) -> dict:
         weight='weight'
     )
     return company_investor_graph
+
+def make_graph_weighted(data):
+    """
+
+    :param data:
+    :return:
+    """
