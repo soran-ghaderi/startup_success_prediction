@@ -20,3 +20,11 @@ def make_graph(data):
     :param data:
     :return:
     """
+    print('making graph...')
+    B = nx.Graph()
+    B.add_nodes_from(data['company_name'], bipartite=0)
+    B.add_nodes_from(data['investor_name'], bipartite=1)
+    B.add_weighted_edges_from(
+        [(row['company_name'], row['investor_name'], 1) for idx, row in data.iterrows()],
+        weight='weight'
+    )
