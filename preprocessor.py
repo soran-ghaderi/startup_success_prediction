@@ -9,6 +9,7 @@ def load_data():
     Import data from the dataset
     :return:
     """
+    print('loading data...')
     data = pd.read_csv('./dataset/Link.csv')
     df_percent = data.sample(frac=0.001)
     return df_percent
