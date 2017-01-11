@@ -16,8 +16,9 @@ def load_and_sample_data():
 
 def make_graph(data):
     """
-
-    :param data:
+    Constructing a bipartite graph for calcW_and_write() method
+    to calculate the common investors startups have
+    :param data: Dictionary object containing data
     :return:
     """
     print('Building the graph...')
