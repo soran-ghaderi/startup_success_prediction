@@ -6,7 +6,7 @@ import numpy as np
 
 def load_data():
     """
-
+    Import data from the dataset
     :return:
     """
     data = pd.read_csv('./dataset/Link.csv')
