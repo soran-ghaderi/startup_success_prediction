@@ -33,8 +33,8 @@ def make_graph(data: dict) -> dict:
 
 def make_graph_weighted(data):
     """
-
-    :param data:
+    Constructing a weighted graph
+    :param data: Dictionary samples
     :return:
     """
     company_investor_weighted_graph = nx.Graph()
