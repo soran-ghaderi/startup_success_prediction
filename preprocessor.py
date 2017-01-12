@@ -35,7 +35,7 @@ def make_graph_weighted(data: dict) -> dict:
     """
     Constructing a weighted graph
     :param data: Dictionary samples
-    :return:
+    :return: Waited graph
     """
     company_investor_weighted_graph = nx.Graph()
     # B.add_nodes_from(data['company_name'], bipartite=0)
