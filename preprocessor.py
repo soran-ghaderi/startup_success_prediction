@@ -44,3 +44,10 @@ def make_graph_weighted(data: dict) -> dict:
         [(row['Source'], row['Target'], row['Weight']) for idx, row in data.iterrows()],
         weight='weight')
     return company_investor_weighted_graph
+
+def making_dicts(data):
+    """
+
+    :param data:
+    :return:
+    """
