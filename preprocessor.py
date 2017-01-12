@@ -62,3 +62,4 @@ def making_dicts(data):
             company_dic.update({i: x})
             company_dic2.update({x: i})
             x = x + 1
+    return company_dic,company_dic2
