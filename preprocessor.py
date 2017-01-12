@@ -37,9 +37,10 @@ def make_graph_weighted(data):
     :param data:
     :return:
     """
-    B = nx.Graph()
+    company_investor_weighted_graph = nx.Graph()
     # B.add_nodes_from(data['company_name'], bipartite=0)
     # B.add_nodes_from(data['investor_name'], bipartite=1)
-    B.add_weighted_edges_from(
+    company_investor_weighted_graph.add_weighted_edges_from(
         [(row['Source'], row['Target'], row['Weight']) for idx, row in data.iterrows()],
         weight='weight')
+    return company_investor_weighted_graph
