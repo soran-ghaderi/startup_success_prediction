@@ -57,9 +57,9 @@ def making_dicts(data):
 
     # print('making dicts...')
     # # print(data)
-    for i in data['name']:
-        if i not in company_dic:
-            company_dic.update({i: x})
-            company_dic2.update({x: i})
+    for company_name in data['name']:
+        if company_name not in company_dic:
+            company_dic.update({company_name: x})
+            company_dic2.update({x: company_name})
             x = x + 1
     return company_dic,company_dic2
