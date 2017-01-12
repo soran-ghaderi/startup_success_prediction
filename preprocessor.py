@@ -31,7 +31,7 @@ def make_graph(data: dict) -> dict:
     )
     return company_investor_graph
 
-def make_graph_weighted(data):
+def make_graph_weighted(data: dict) -> dict:
     """
     Constructing a weighted graph
     :param data: Dictionary samples
