@@ -47,8 +47,8 @@ def make_graph_weighted(data: dict) -> dict:
 
 def making_dicts(data):
     """
-
-    :param data:
+    Create two dictionaries: ID-Company and Company-ID
+    :param data: Dictionary containing companies data
     :return:
     """
     company_id, x2 = 0, 0
