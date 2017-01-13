@@ -51,7 +51,7 @@ def making_dicts(data):
     :param data: Dictionary containing companies data
     :return: Two dictionaries: 1. ID-company 2. company-ID
     """
-    company_id, x2 = 0, 0
+    company_id = 0
     company_id_dict = {}
     id_company_dict = {}
 
