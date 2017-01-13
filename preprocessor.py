@@ -56,7 +56,6 @@ def making_dicts(data):
     id_company_dict = {}
 
     # print('making dicts...')
-    # # print(data)
     for company_name in data['name']:
         if company_name not in company_id_dict:
             company_id_dict.update({company_name: company_id})
