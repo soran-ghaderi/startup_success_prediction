@@ -45,7 +45,7 @@ def make_graph_weighted(data: dict) -> dict:
         weight='weight')
     return company_investor_weighted_graph
 
-def making_dicts(data):
+def making_dicts(data: dict) -> tuple[dict, dict]:
     """
     Create two dictionaries: ID-Company and Company-ID
     :param data: Dictionary containing companies data
