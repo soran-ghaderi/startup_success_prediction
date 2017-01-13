@@ -51,15 +51,15 @@ def making_dicts(data):
     :param data:
     :return:
     """
-    x, x2 = 0, 0
-    company_dic = {}
-    company_dic2 = {}
+    company_id, x2 = 0, 0
+    company_id_dict = {}
+    id_company_dict = {}
 
     # print('making dicts...')
     # # print(data)
     for company_name in data['name']:
-        if company_name not in company_dic:
-            company_dic.update({company_name: x})
-            company_dic2.update({x: company_name})
-            x = x + 1
-    return company_dic,company_dic2
+        if company_name not in company_id_dict:
+            company_id_dict.update({company_name: company_id})
+            id_company_dict.update({company_id: company_name})
+            company_id = company_id + 1
+    return company_id_dict,id_company_dict
