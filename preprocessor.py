@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import numpy as np
 
+
 def load_and_sample_data():
     """
     Import data from the dataset
@@ -13,6 +14,7 @@ def load_and_sample_data():
     data = pd.read_csv('./dataset/Link.csv')
     df_percent = data.sample(frac=0.001)
     return df_percent
+
 
 def make_graph(data: dict) -> dict:
     """
@@ -31,6 +33,7 @@ def make_graph(data: dict) -> dict:
     )
     return company_investor_graph
 
+
 def make_graph_weighted(data: dict) -> dict:
     """
     Constructing a weighted graph
@@ -44,6 +47,7 @@ def make_graph_weighted(data: dict) -> dict:
         [(row['Source'], row['Target'], row['Weight']) for idx, row in data.iterrows()],
         weight='weight')
     return company_investor_weighted_graph
+
 
 def making_dicts(data: dict) -> tuple[dict, dict]:
     """
@@ -61,4 +65,4 @@ def making_dicts(data: dict) -> tuple[dict, dict]:
             company_id_dict.update({company_name: company_id})
             id_company_dict.update({company_id: company_name})
             company_id = company_id + 1
-    return company_id_dict,id_company_dict
+    return company_id_dict, id_company_dict
