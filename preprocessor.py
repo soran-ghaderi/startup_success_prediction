@@ -66,3 +66,10 @@ def making_dicts(data: dict) -> tuple[dict, dict]:
             id_company_dict.update({company_id: company_name})
             company_id = company_id + 1
     return company_id_dict, id_company_dict
+
+def making_dicts2(data):
+    """
+
+    :param data:
+    :return:
+    """
