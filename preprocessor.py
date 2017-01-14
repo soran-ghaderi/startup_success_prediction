@@ -25,10 +25,10 @@ def make_graph(data: dict) -> dict:
     """
     print('Building the graph...')
     company_investor_graph = nx.Graph()
-    company_investor_graph.add_nodes_from(data['company_name'], bipartite=0)
+    company_investor_graph.add_nodes_from(data['startup_name'], bipartite=0)
     company_investor_graph.add_nodes_from(data['investor_name'], bipartite=1)
     company_investor_graph.add_weighted_edges_from(
-        [(row['company_name'], row['investor_name'], 1) for idx, row in data.iterrows()],
+        [(row['startup_name'], row['investor_name'], 1) for idx, row in data.iterrows()],
         weight='weight'
     )
     return company_investor_graph
@@ -41,7 +41,7 @@ def make_graph_weighted(data: dict) -> dict:
     :return: Waited graph
     """
     company_investor_weighted_graph = nx.Graph()
-    # B.add_nodes_from(data['company_name'], bipartite=0)
+    # B.add_nodes_from(data['startup_name'], bipartite=0)
     # B.add_nodes_from(data['investor_name'], bipartite=1)
     company_investor_weighted_graph.add_weighted_edges_from(
         [(row['Source'], row['Target'], row['Weight']) for idx, row in data.iterrows()],
@@ -55,17 +55,17 @@ def making_startup_dicts(data: dict) -> tuple[dict, dict]:
     :param data: Dictionary containing companies data
     :return: Two dictionaries: 1. ID-company 2. company-ID
     """
-    company_id = 0
-    company_id_dict = {}
+    startup_id = 0
+    startup_id_dict = {}
     id_company_dict = {}
 
     # print('making dicts...')
-    for company_name in data['name']:
-        if company_name not in company_id_dict:
-            company_id_dict.update({company_name: company_id})
-            id_company_dict.update({company_id: company_name})
-            company_id = company_id + 1
-    return company_id_dict, id_company_dict
+    for startup_name in data['name']:
+        if startup_name not in startup_id_dict:
+            startup_id_dict.update({startup_name: startup_id})
+            id_company_dict.update({startup_id: startup_name})
+            startup_id = startup_id + 1
+    return startup_id_dict, id_company_dict
 
 def making_dicts2(data):
     """
