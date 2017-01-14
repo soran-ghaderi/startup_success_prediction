@@ -69,7 +69,7 @@ def making_startup_dicts(data: dict) -> tuple[dict, dict]:
 
 def making_investor_startup_dicts(data):
     """
-
+    Create two dictionaries: ID-Startup, Startup-ID, Investor_ID and ID_investor
     :param data:
     :return:
     """
