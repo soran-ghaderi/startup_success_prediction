@@ -91,3 +91,4 @@ def making_investor_startup_dicts(data):
             investor_dic2.update({x2: i})
             x2 = x2 + 1
     # print(company_dic2.__len__())
+    return company_dic,company_dic2, investor_dic, investor_dic2
