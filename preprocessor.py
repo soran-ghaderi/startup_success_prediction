@@ -51,7 +51,7 @@ def make_graph_weighted(data: dict) -> dict:
 
 def making_startup_dicts(data: dict) -> tuple[dict, dict]:
     """
-    Create two dictionaries: ID-Company and Company-ID
+    Create two dictionaries: ID-Startup and Startup-ID
     :param data: Dictionary containing companies data
     :return: Two dictionaries: 1. ID-company 2. company-ID
     """
