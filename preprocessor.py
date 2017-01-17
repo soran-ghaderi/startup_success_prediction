@@ -79,7 +79,6 @@ def making_investor_startup_dicts(data: dict) -> tuple[dict, dict]:
     investor_dic = {}
     investor_dic2 = {}
     # print('making dicts...')
-    # # print(data)
     for i in data['company_name']:
         if i not in company_dic:
             company_dic.update({i: x})
@@ -90,5 +89,4 @@ def making_investor_startup_dicts(data: dict) -> tuple[dict, dict]:
             investor_dic.update({i: x2})
             investor_dic2.update({x2: i})
             x2 = x2 + 1
-    # print(company_dic2.__len__())
     return company_dic,company_dic2, investor_dic, investor_dic2
