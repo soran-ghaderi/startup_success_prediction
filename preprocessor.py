@@ -99,3 +99,40 @@ def calcW_and_write(data):
     :param data:
     :return:
     """
+    # data = load_data()
+    B = make_graph(data)
+    print(B.edges)
+    out = open('./dataset/Links.csv', 'w')
+    out2 = open('./dataset/labels.csv', 'w')
+    company_dic, company_dic2, investor_dic, investor_dic2 = making_dicts2(data)
+    lengthC1, lengthI1 = company_dic.__len__(), investor_dic.__len__()
+
+    id_counter, cc = 0, 0
+    for i in range(lengthC1):
+        for j in (range(i + 1, lengthC1)):
+            print(company_dic2[i], '--', company_dic2[j])
+            w = nx.common_neighbors(B, company_dic2[i], company_dic2[j])
+            print(w)
+            if w != 0:
+                out.write(str(id_counter))
+                out.write(',')
+                out.write(str(company_dic2[i]))
+                out.write(',')
+                out.write(str(i))
+                out.write(',')
+                out.write(str(company_dic2[j]))
+                out.write(',')
+                out.write(str(j))
+                out.write(',')
+                out.write(str(w))
+                out.write("\n")
+                id_counter = id_counter + 1
+        # if cc%100 ==0 :
+        # print(cc)
+
+        cc = cc + 1
+    for i in range(lengthC1):
+        out2.write(str(i))
+        out2.write(',')
+        # out2.write(str(company_dic2[i]))
+        out2.write("\n")
