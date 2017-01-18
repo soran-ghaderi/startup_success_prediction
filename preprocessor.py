@@ -67,6 +67,7 @@ def making_startup_dicts(data: dict) -> tuple[dict, dict]:
             startup_id = startup_id + 1
     return startup_id_dict, id_company_dict
 
+
 def making_investor_startup_dicts(data: dict) -> tuple[dict, dict]:
     """
     Create two dictionaries: ID-Startup, Startup-ID, Investor_ID and ID_Investor
@@ -89,7 +90,7 @@ def making_investor_startup_dicts(data: dict) -> tuple[dict, dict]:
             investor_dic.update({i: x2})
             investor_dic2.update({x2: i})
             x2 = x2 + 1
-    return startup_id_dict,company_dic2, investor_dic, investor_dic2
+    return startup_id_dict, company_dic2, investor_dic, investor_dic2
 
 
 def calcW_and_write(data):
