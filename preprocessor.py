@@ -95,7 +95,7 @@ def making_investor_startup_dicts(data: dict) -> tuple[dict, dict]:
 
 def calcW_and_write(data):
     """
-
+    Calculate and make primary graph edges
     :param data:
     :return:
     """
@@ -104,7 +104,7 @@ def calcW_and_write(data):
     print(B.edges)
     out = open('./dataset/Links.csv', 'w')
     out2 = open('./dataset/labels.csv', 'w')
-    company_dic, company_dic2, investor_dic, investor_dic2 = making_dicts2(data)
+    company_dic, company_dic2, investor_dic, investor_dic2 = making_investor_startup_dicts(data)
     lengthC1, lengthI1 = company_dic.__len__(), investor_dic.__len__()
 
     id_counter, cc = 0, 0
