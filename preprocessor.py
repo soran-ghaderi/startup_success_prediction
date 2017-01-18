@@ -92,3 +92,9 @@ def making_investor_startup_dicts(data: dict) -> tuple[dict, dict]:
     return startup_id_dict,company_dic2, investor_dic, investor_dic2
 
 
+def calcW_and_write(data):
+    """
+
+    :param data:
+    :return:
+    """
