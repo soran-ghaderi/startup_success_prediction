@@ -100,8 +100,8 @@ def calcW_and_write(data):
     :return:
     """
     # data = load_data()
-    B = make_graph(data)
-    print(B.edges)
+    investor_startup_graph = make_graph(data)
+    print(investor_startup_graph.edges)
     out = open('./dataset/Links.csv', 'w')
     out2 = open('./dataset/labels.csv', 'w')
     startup_id_dict, id_startup_dict, investor_id_dict, id_investor_dict = making_investor_startup_dicts(data)
@@ -111,7 +111,7 @@ def calcW_and_write(data):
     for i in range(lengthC1):
         for j in (range(i + 1, lengthC1)):
             print(id_startup_dict[i], '--', id_startup_dict[j])
-            w = nx.common_neighbors(B, id_startup_dict[i], id_startup_dict[j])
+            w = nx.common_neighbors(investor_startup_graph, id_startup_dict[i], id_startup_dict[j])
             print(w)
             if w != 0:
                 out.write(str(id_counter))
