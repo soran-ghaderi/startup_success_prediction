@@ -74,22 +74,22 @@ def making_investor_startup_dicts(data: dict) -> tuple[dict, dict]:
     :param data: Dictionary containing companies data
     :return: Four dictionaries: 1. ID-Startup 2. Startup-ID 3. Investor_ID 4. ID_Investor
     """
-    startup_id, x2 = 0, 0
+    startup_id, investor_id = 0, 0
     startup_id_dict = {}
     id_startup_dict = {}
     investor_id_dict = {}
     id_investor_dict = {}
     # print('making dicts...')
-    for i in data['company_name']:
-        if i not in startup_id_dict:
-            startup_id_dict.update({i: x})
-            id_startup_dict.update({x: i})
-            x = x + 1
-    for i in data['investor_name']:
-        if i not in investor_id_dict:
-            investor_id_dict.update({i: x2})
-            id_investor_dict.update({x2: i})
-            x2 = x2 + 1
+    for startup_name in data['company_name']:
+        if startup_name not in startup_id_dict:
+            startup_id_dict.update({startup_name: startup_id})
+            id_startup_dict.update({startup_id: startup_name})
+            startup_id = startup_id + 1
+    for investor_name in data['investor_name']:
+        if investor_name not in investor_id_dict:
+            investor_id_dict.update({investor_name: investor_id})
+            id_investor_dict.update({investor_id: investor_name})
+            investor_id = investor_id + 1
     return startup_id_dict, id_startup_dict, investor_id_dict, id_investor_dict
 
 
