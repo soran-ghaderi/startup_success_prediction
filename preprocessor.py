@@ -76,21 +76,21 @@ def making_investor_startup_dicts(data: dict) -> tuple[dict, dict]:
     """
     startup_id, x2 = 0, 0
     startup_id_dict = {}
-    company_dic2 = {}
-    investor_dic = {}
-    investor_dic2 = {}
+    id_startup_dict = {}
+    investor_id_dict = {}
+    id_investor_dict = {}
     # print('making dicts...')
     for i in data['company_name']:
         if i not in startup_id_dict:
             startup_id_dict.update({i: x})
-            company_dic2.update({x: i})
+            id_startup_dict.update({x: i})
             x = x + 1
     for i in data['investor_name']:
-        if i not in investor_dic:
-            investor_dic.update({i: x2})
-            investor_dic2.update({x2: i})
+        if i not in investor_id_dict:
+            investor_id_dict.update({i: x2})
+            id_investor_dict.update({x2: i})
             x2 = x2 + 1
-    return startup_id_dict, company_dic2, investor_dic, investor_dic2
+    return startup_id_dict, id_startup_dict, investor_id_dict, id_investor_dict
 
 
 def calcW_and_write(data):
@@ -104,23 +104,23 @@ def calcW_and_write(data):
     print(B.edges)
     out = open('./dataset/Links.csv', 'w')
     out2 = open('./dataset/labels.csv', 'w')
-    company_dic, company_dic2, investor_dic, investor_dic2 = making_investor_startup_dicts(data)
-    lengthC1, lengthI1 = company_dic.__len__(), investor_dic.__len__()
+    startup_id_dict, id_startup_dict, investor_id_dict, id_investor_dict = making_investor_startup_dicts(data)
+    lengthC1, lengthI1 = startup_id_dict.__len__(), investor_id_dict.__len__()
 
     id_counter, cc = 0, 0
     for i in range(lengthC1):
         for j in (range(i + 1, lengthC1)):
-            print(company_dic2[i], '--', company_dic2[j])
-            w = nx.common_neighbors(B, company_dic2[i], company_dic2[j])
+            print(id_startup_dict[i], '--', id_startup_dict[j])
+            w = nx.common_neighbors(B, id_startup_dict[i], id_startup_dict[j])
             print(w)
             if w != 0:
                 out.write(str(id_counter))
                 out.write(',')
-                out.write(str(company_dic2[i]))
+                out.write(str(id_startup_dict[i]))
                 out.write(',')
                 out.write(str(i))
                 out.write(',')
-                out.write(str(company_dic2[j]))
+                out.write(str(id_startup_dict[j]))
                 out.write(',')
                 out.write(str(j))
                 out.write(',')
@@ -134,5 +134,5 @@ def calcW_and_write(data):
     for i in range(lengthC1):
         out2.write(str(i))
         out2.write(',')
-        # out2.write(str(company_dic2[i]))
+        # out2.write(str(id_startup_dict[i]))
         out2.write("\n")
