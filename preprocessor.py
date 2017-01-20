@@ -99,11 +99,10 @@ def calcW_and_write(data):
     :param data:
     :return:
     """
-    # data = load_data()
     investor_startup_graph = make_graph(data)
     print(investor_startup_graph.edges)
-    out = open('./dataset/Links.csv', 'w')
-    out2 = open('./dataset/labels.csv', 'w')
+    output_link = open('./dataset/Links.csv', 'w')
+    output_label = open('./dataset/labels.csv', 'w')
     startup_id_dict, id_startup_dict, investor_id_dict, id_investor_dict = making_investor_startup_dicts(data)
     startup_id_dict_len, investor_id_dict_len = startup_id_dict.__len__(), investor_id_dict.__len__()
 
@@ -114,24 +113,24 @@ def calcW_and_write(data):
             w = nx.common_neighbors(investor_startup_graph, id_startup_dict[i], id_startup_dict[j])
             print(w)
             if w != 0:
-                out.write(str(id_counter))
-                out.write(',')
-                out.write(str(id_startup_dict[i]))
-                out.write(',')
-                out.write(str(i))
-                out.write(',')
-                out.write(str(id_startup_dict[j]))
-                out.write(',')
-                out.write(str(j))
-                out.write(',')
-                out.write(str(w))
-                out.write("\n")
+                output_link.write(str(id_counter))
+                output_link.write(',')
+                output_link.write(str(id_startup_dict[i]))
+                output_link.write(',')
+                output_link.write(str(i))
+                output_link.write(',')
+                output_link.write(str(id_startup_dict[j]))
+                output_link.write(',')
+                output_link.write(str(j))
+                output_link.write(',')
+                output_link.write(str(w))
+                output_link.write("\n")
                 id_counter = id_counter + 1
         # if cc%100 ==0 :
         # print(cc)
 
     for i in range(startup_id_dict_len):
-        out2.write(str(i))
-        out2.write(',')
-        # out2.write(str(id_startup_dict[i]))
-        out2.write("\n")
+        output_label.write(str(i))
+        output_label.write(',')
+        # output_label.write(str(id_startup_dict[i]))
+        output_label.write("\n")
