@@ -107,7 +107,7 @@ def calcW_and_write(data):
     startup_id_dict, id_startup_dict, investor_id_dict, id_investor_dict = making_investor_startup_dicts(data)
     startup_id_dict_len, investor_id_dict_len = startup_id_dict.__len__(), investor_id_dict.__len__()
 
-    id_counter, cc = 0, 0
+    id_counter = 0
     for i in range(startup_id_dict_len):
         for j in (range(i + 1, startup_id_dict_len)):
             print(id_startup_dict[i], '--', id_startup_dict[j])
@@ -130,7 +130,6 @@ def calcW_and_write(data):
         # if cc%100 ==0 :
         # print(cc)
 
-        cc = cc + 1
     for i in range(startup_id_dict_len):
         out2.write(str(i))
         out2.write(',')
