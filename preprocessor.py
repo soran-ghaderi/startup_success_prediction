@@ -126,8 +126,8 @@ def calcW_and_write(data):
                 output_link.write(str(w))
                 output_link.write("\n")
                 id_counter = id_counter + 1
-        # if cc%100 ==0 :
-        # print(cc)
+        # if i%100 ==0 :
+        # print(i)
 
     for i in range(startup_id_dict_len):
         output_label.write(str(i))
