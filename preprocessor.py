@@ -105,11 +105,11 @@ def calcW_and_write(data):
     out = open('./dataset/Links.csv', 'w')
     out2 = open('./dataset/labels.csv', 'w')
     startup_id_dict, id_startup_dict, investor_id_dict, id_investor_dict = making_investor_startup_dicts(data)
-    lengthC1, lengthI1 = startup_id_dict.__len__(), investor_id_dict.__len__()
+    startup_id_dict_len, investor_id_dict_len = startup_id_dict.__len__(), investor_id_dict.__len__()
 
     id_counter, cc = 0, 0
-    for i in range(lengthC1):
-        for j in (range(i + 1, lengthC1)):
+    for i in range(startup_id_dict_len):
+        for j in (range(i + 1, startup_id_dict_len)):
             print(id_startup_dict[i], '--', id_startup_dict[j])
             w = nx.common_neighbors(investor_startup_graph, id_startup_dict[i], id_startup_dict[j])
             print(w)
@@ -131,7 +131,7 @@ def calcW_and_write(data):
         # print(cc)
 
         cc = cc + 1
-    for i in range(lengthC1):
+    for i in range(startup_id_dict_len):
         out2.write(str(i))
         out2.write(',')
         # out2.write(str(id_startup_dict[i]))
