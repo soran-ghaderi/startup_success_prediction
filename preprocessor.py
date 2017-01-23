@@ -106,14 +106,14 @@ def calcW_and_write(data):
     startup_id_dict, id_startup_dict, investor_id_dict, id_investor_dict = making_investor_startup_dicts(data)
     startup_id_dict_len, investor_id_dict_len = startup_id_dict.__len__(), investor_id_dict.__len__()
 
-    id_counter = 0
+    edge_id = 0
     for i in range(startup_id_dict_len):
         for j in (range(i + 1, startup_id_dict_len)):
             print(id_startup_dict[i], '--', id_startup_dict[j])
             w = nx.common_neighbors(investor_startup_graph, id_startup_dict[i], id_startup_dict[j])
             print(w)
             if w != 0:
-                output_link.write(str(id_counter))
+                output_link.write(str(edge_id))
                 output_link.write(',')
                 output_link.write(str(id_startup_dict[i]))
                 output_link.write(',')
@@ -125,7 +125,7 @@ def calcW_and_write(data):
                 output_link.write(',')
                 output_link.write(str(w))
                 output_link.write("\n")
-                id_counter = id_counter + 1
+                edge_id = edge_id + 1
         # if i%100 ==0 :
         # print(i)
 
