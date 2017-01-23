@@ -132,5 +132,5 @@ def calcW_and_write(data):
     for i in range(startup_id_dict_len):
         output_label.write(str(i))
         output_label.write(',')
-        # output_label.write(str(id_startup_dict[i]))
+        output_label.write(str(id_startup_dict[i]))
         output_label.write("\n")
