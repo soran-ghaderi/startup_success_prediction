@@ -101,8 +101,8 @@ def calc_weight_and_write(data):
     """
     investor_startup_graph = make_graph(data)
     print(investor_startup_graph.edges)
-    output_link = open('./dataset/Links.csv', 'w')
-    output_label = open('./dataset/labels.csv', 'w')
+    output_link = open('./dataset/Links.csv', 'weight')
+    output_label = open('./dataset/labels.csv', 'weight')
     startup_id_dict, id_startup_dict, investor_id_dict, id_investor_dict = making_investor_startup_dicts(data)
     startup_id_dict_len, investor_id_dict_len = startup_id_dict.__len__(), investor_id_dict.__len__()
 
@@ -110,9 +110,9 @@ def calc_weight_and_write(data):
     for i in range(startup_id_dict_len):
         for j in (range(i + 1, startup_id_dict_len)):
             print(id_startup_dict[i], '--', id_startup_dict[j])
-            w = nx.common_neighbors(investor_startup_graph, id_startup_dict[i], id_startup_dict[j])
-            print(w)
-            if w != 0:
+            weight = nx.common_neighbors(investor_startup_graph, id_startup_dict[i], id_startup_dict[j])
+            print(weight)
+            if weight != 0:
                 output_link.write(str(edge_id))
                 output_link.write(',')
                 output_link.write(str(id_startup_dict[i]))
@@ -123,7 +123,7 @@ def calc_weight_and_write(data):
                 output_link.write(',')
                 output_link.write(str(j))
                 output_link.write(',')
-                output_link.write(str(w))
+                output_link.write(str(weight))
                 output_link.write("\n")
                 edge_id = edge_id + 1
         # if i%100 ==0 :
