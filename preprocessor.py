@@ -93,7 +93,7 @@ def making_investor_startup_dicts(data: dict) -> tuple[dict, dict]:
     return startup_id_dict, id_startup_dict, investor_id_dict, id_investor_dict
 
 
-def calcW_and_write(data):
+def calc_weight_and_write(data):
     """
     Calculate and make primary graph edges
     :param data:
