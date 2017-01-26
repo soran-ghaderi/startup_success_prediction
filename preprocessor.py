@@ -134,3 +134,11 @@ def calc_weight_and_write(data):
         output_label.write(',')
         output_label.write(str(id_startup_dict[i]))
         output_label.write("\n")
+
+def metrics(B,data):
+    """
+
+    :param B:
+    :param data:
+    :return:
+    """
