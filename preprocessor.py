@@ -142,3 +142,13 @@ def metrics(B,data):
     :param data:
     :return:
     """
+    # print('calculating metrics...')
+    # print(120*'+','Closeness ...')
+    closeness = nx.closeness_centrality(B, u=None, distance=None)
+    # Eig = nx.eigenvector_centrality(B)
+    # print(120 * '+', 'Degree ...')
+    deg = nx.degree_centrality(B)
+    # print(120 * '+', 'Betweenness ...')
+    bet = nx.betweenness_centrality(B, k=None, normalized=False, weight=None, endpoints=False)
+    # print(120 * '+', 'Page rank ...')
+    pagerank = nx.pagerank(B)
