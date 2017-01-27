@@ -41,8 +41,8 @@ def make_graph_weighted(data: dict) -> dict:
     :return: Waited graph
     """
     company_investor_weighted_graph = nx.Graph()
-    # B.add_nodes_from(data['startup_name'], bipartite=0)
-    # B.add_nodes_from(data['investor_name'], bipartite=1)
+    # graph.add_nodes_from(data['startup_name'], bipartite=0)
+    # graph.add_nodes_from(data['investor_name'], bipartite=1)
     company_investor_weighted_graph.add_weighted_edges_from(
         [(row['Source'], row['Target'], row['Weight']) for idx, row in data.iterrows()],
         weight='weight')
@@ -135,26 +135,26 @@ def calc_weight_and_write(data):
         output_label.write(str(id_startup_dict[i]))
         output_label.write("\n")
 
-def metrics(B,data):
+def metrics(graph,data):
     """
-    Calculating metrics for the startups graph.
+    Calculating metrics for the startups' graph.
     Metrics calculated are:
-    1.  Closeness
-    2.  Degree
-    3.  Betweenness
-    4.  PageRank
-    :param B:
+        1. Closeness
+        2. Degree
+        3. Betweenness
+        4. PageRank
+    :param graph:
     :param data:
     :return:
     """
     # print('calculating metrics...')
     # print(120*'+','Closeness ...')
-    closeness = nx.closeness_centrality(B, u=None, distance=None)
-    # Eig = nx.eigenvector_centrality(B)
+    closeness = nx.closeness_centrality(graph, u=None, distance=None)
+    # Eig = nx.eigenvector_centrality(graph)
     # print(120 * '+', 'Degree ...')
-    deg = nx.degree_centrality(B)
+    deg = nx.degree_centrality(graph)
     # print(120 * '+', 'Betweenness ...')
-    bet = nx.betweenness_centrality(B, k=None, normalized=False, weight=None, endpoints=False)
+    bet = nx.betweenness_centrality(graph, k=None, normalized=False, weight=None, endpoints=False)
     # print(120 * '+', 'Page rank ...')
-    pagerank = nx.pagerank(B)
+    pagerank = nx.pagerank(graph)
     return closeness,deg, bet, pagerank
