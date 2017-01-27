@@ -137,7 +137,7 @@ def calc_weight_and_write(data):
 
 def metrics(graph,data):
     """
-    Calculating metrics for the startups' graph.
+    Calculate metrics for the startups' graph.
     Metrics calculated are:
         1. Closeness
         2. Degree
