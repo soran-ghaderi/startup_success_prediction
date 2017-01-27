@@ -137,7 +137,12 @@ def calc_weight_and_write(data):
 
 def metrics(B,data):
     """
-
+    Calculating metrics for the startups graph.
+    Metrics calculated are:
+    1.  Closeness
+    2.  Degree
+    3.  Betweenness
+    4.  PageRank
     :param B:
     :param data:
     :return:
