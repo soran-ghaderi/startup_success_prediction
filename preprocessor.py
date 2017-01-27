@@ -152,3 +152,4 @@ def metrics(B,data):
     bet = nx.betweenness_centrality(B, k=None, normalized=False, weight=None, endpoints=False)
     # print(120 * '+', 'Page rank ...')
     pagerank = nx.pagerank(B)
+    return closeness,deg, bet, pagerank
