@@ -143,7 +143,7 @@ def metrics(graph,data):
         2. Degree
         3. Betweenness
         4. PageRank
-    :param graph: Startups and companies graph
+    :param graph: A NetworkX graph of Startups and companies
     :param data:
     :return:
     """
