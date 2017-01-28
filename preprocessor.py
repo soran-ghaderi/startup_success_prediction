@@ -135,7 +135,7 @@ def calc_weight_and_write(data):
         output_label.write(str(id_startup_dict[i]))
         output_label.write("\n")
 
-def metrics(graph,data):
+def metrics(graph):
     """
     Calculate metrics for the startups' graph.
     Metrics calculated are:
@@ -143,8 +143,7 @@ def metrics(graph,data):
         2. Degree
         3. Betweenness
         4. PageRank
-    :param graph: A NetworkX graph of Startups and companies
-    :param data:
+    :param graph: A NetworkX graph of startups and companies
     :return:
     """
     # print('calculating metrics...')
