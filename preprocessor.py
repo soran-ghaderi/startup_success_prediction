@@ -170,3 +170,31 @@ def fwrite(closeness, deg,bet, pagerank, rowdata, companyN_num_dict1, companynum
     :param companynum_N_dict1:
     :return:
     """
+    dictw = {}
+
+    co = 0
+    metric.write('startup_ID')
+    metric.write(',')
+    metric.write('startup_name')
+    metric.write(',')
+    # metric.write('companyN_num_dict1')
+    # metric.write(',')
+
+    metric.write('closeness_centrality')
+    metric.write(',')
+    # metric.write('eigenvector_centrality')
+    # metric.write(',')
+    metric.write('degree_centrality')
+    metric.write(',')
+    metric.write('betweenness_centrality')
+    metric.write(',')
+    metric.write('pagerank')
+    metric.write(',')
+    metric.write('category_code')
+    metric.write(',')
+    metric.write('funding_total_usd')
+    metric.write(',')
+    metric.write('region')
+    metric.write(',')
+    metric.write('status')
+    metric.write("\n")
