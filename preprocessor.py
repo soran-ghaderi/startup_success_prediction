@@ -197,3 +197,37 @@ def fwrite(closeness, deg,bet, pagerank, rowdata, companyN_num_dict1, companynum
     metric.write(',')
     metric.write('status')
     metric.write("\n")
+    for node in data['Source']:
+        if node not in dictw:
+            dict.update({node: co})
+            co += 1
+            # print(node, ':           ', closeness[node])
+            if not (rowdata['funding_total_usd'][node]) is np.nan:
+                metric.write(str(node))
+                metric.write(str(','))
+                if str(companynum_N_dict1[node]).__contains__(','):
+                    metric.write(str(companynum_N_dict1[node]).replace(',', ''))
+                else:
+                    metric.write(str(companynum_N_dict1[node]))
+                metric.write(str(','))
+                # metric.write(str(companyN_num_dict1[companynum_N_dict1[node]]))
+                # metric.write(str(','))
+                metric.write(str(closeness[node]))
+                metric.write(str(','))
+                # metric.write(str(eig[node]))
+                # metric.write(str(','))
+                metric.write(str(deg[node]))
+                metric.write(str(','))
+                metric.write(str(bet[node]))
+                metric.write(str(','))
+                metric.write(str(pagerank[node]))
+                metric.write(str(','))
+                metric.write(str(rowdata['category_code'][node]))
+                metric.write(str(','))
+                metric.write(str(rowdata['funding_total_usd'][node]))
+                metric.write(str(','))
+                metric.write(str(rowdata['region'][node]))
+                metric.write(str(','))
+                metric.write(str(rowdata['status'][node]))
+                metric.write(str("\n"))
+                # # print(20*'-',companynum_N_dict1[node],rowdata['category_code'][node])
