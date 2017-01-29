@@ -158,7 +158,7 @@ def metrics(graph):
     pagerank = nx.pagerank(graph)
     return closeness,deg, bet, pagerank
 
-def fwrite(closeness, deg,bet, pagerank, rowdata, companyN_num_dict1, companynum_N_dict1):
+def fwrite(data, closeness, deg,bet, pagerank, rowdata, companyN_num_dict1, companynum_N_dict1):
     """
 
     :param closeness:
