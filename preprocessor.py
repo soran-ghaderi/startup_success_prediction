@@ -101,8 +101,8 @@ def calc_weight_and_write(data):
     """
     investor_startup_graph = make_graph(data)
     print(investor_startup_graph.edges)
-    output_link = open('./dataset/Links.csv', 'weight')
-    output_label = open('./dataset/labels.csv', 'weight')
+    output_link = open('./dataset/Links.csv', 'w')
+    output_label = open('./dataset/labels.csv', 'w')
     startup_id_dict, id_startup_dict, investor_id_dict, id_investor_dict = making_investor_startup_dicts(data)
     startup_id_dict_len, investor_id_dict_len = startup_id_dict.__len__(), investor_id_dict.__len__()
 
@@ -171,7 +171,7 @@ def fwrite(closeness, deg,bet, pagerank, rowdata, companyN_num_dict1, companynum
     :return:
     """
     dictw = {}
-
+    metric = open('./output/metrics.csv', 'w')
     co = 0
     metric.write('startup_ID')
     metric.write(',')
@@ -179,7 +179,6 @@ def fwrite(closeness, deg,bet, pagerank, rowdata, companyN_num_dict1, companynum
     metric.write(',')
     # metric.write('companyN_num_dict1')
     # metric.write(',')
-
     metric.write('closeness_centrality')
     metric.write(',')
     # metric.write('eigenvector_centrality')
