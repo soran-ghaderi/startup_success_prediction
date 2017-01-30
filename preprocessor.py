@@ -234,3 +234,8 @@ def fwrite(data, closeness, deg,bet, pagerank, rowdata, companyN_num_dict1, comp
 
 
 if __name__ == '__main__':
+    start_time = datetime.now()
+    rowData = pd.read_csv('./dataset/crunchbase-companies.csv')
+    metric = open('./dataset/metrics3.csv', 'w')
+    dataci = pd.read_csv('./dataset/ci.csv').sort_values('company_name').sample(frac=0.001)
+    data = load_data()
