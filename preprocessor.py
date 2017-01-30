@@ -231,3 +231,6 @@ def fwrite(data, closeness, deg,bet, pagerank, rowdata, companyN_num_dict1, comp
                 metric.write(str(rowdata['status'][node]))
                 metric.write(str("\n"))
                 # # print(20*'-',companynum_N_dict1[node],rowdata['category_code'][node])
+
+
+if __name__ == '__main__':
