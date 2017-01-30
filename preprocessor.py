@@ -160,7 +160,7 @@ def metrics(graph):
 
 def fwrite(data, closeness, deg,bet, pagerank, rowdata, companyN_num_dict1, companynum_N_dict1):
     """
-
+    Write network metrics into file
     :param closeness:
     :param deg:
     :param bet:
