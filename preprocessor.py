@@ -245,3 +245,8 @@ if __name__ == '__main__':
     B = make_graph_weighted(data=data)
     closeness, deg, bet, pagerank = metrics(B, data)
     fwrite(closeness, deg, bet, pagerank, rowData, dict1, dict2)
+
+    end_time = datetime.now()
+    # print('Duration: {}'.format(end_time - start_time))
+    # metric.write("\n")
+    # metric.write(str('Duration: {}'.format(end_time - start_time)))
