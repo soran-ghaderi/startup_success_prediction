@@ -239,3 +239,9 @@ if __name__ == '__main__':
     metric = open('./dataset/metrics3.csv', 'w')
     dataci = pd.read_csv('./dataset/ci.csv').sort_values('company_name').sample(frac=0.001)
     data = load_data()
+
+    calcW_and_write(dataci)
+    dict1, dict2 = making_dicts(rowData)
+    B = make_graph_weighted(data=data)
+    closeness, deg, bet, pagerank = metrics(B, data)
+    fwrite(closeness, deg, bet, pagerank, rowData, dict1, dict2)
